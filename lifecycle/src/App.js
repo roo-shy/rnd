@@ -32,14 +32,13 @@ class Test extends Component {
 
 
 class App extends Component {
-  
-    constructor() {
+  constructor() {
     super(); 
-    this.state = {
-      name: 'kate'
-    }
+    this.state = {isToggledOn: true};
       console.log('constructor')
+      this.handleClick = this.handleClick.bind(this);
     }
+    
     componentWillMount(){
       console.log('willMount')
     }
@@ -53,6 +52,12 @@ class App extends Component {
         name: 'Peter'
       })
     }
+    
+    handleClick() {
+      this.setState(prevState => ({
+        isToggledOn: !prevState.isToggledOn
+      }));
+    }
 
   render() {
     console.log('privet render')
@@ -60,7 +65,9 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" onClick={()=>this._changeName()} />
-          <h2>Welcome to React</h2>
+          <button onClick={this.handleClick}>
+           {this.state.isToggleOn ? 'ON' : 'OFF'}
+          </button>
         </div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
