@@ -35,7 +35,7 @@ class App extends Component {
       isToggleOn: true
     };
 
-    // This binding is necessary to make `this` work in the callback
+    // This binding is necessary to make `this` work in the callback could be removed if using ES6
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -64,9 +64,10 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" 
-            // onClick={() => this._changeName()}}
-          />
+          <img src={logo} className="App-logo" alt="logo"
+            // onClick={() => this._changeName()
+        }
+      }}/>
           <button onClick={this.handleClick}>
             {this.state.isToggleOn
               ? 'ON'
@@ -75,9 +76,3 @@ class App extends Component {
         </div>
         <Test name={this.state.name}/>
       </div>
-    );
-  }
-
-}
-
-export default App;
