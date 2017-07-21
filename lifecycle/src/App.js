@@ -28,7 +28,7 @@ class Test extends Component {
   }
 }
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -66,8 +66,8 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo"
             // onClick={() => this._changeName()
-        }
-      }}/>
+        
+      />
           <button onClick={this.handleClick}>
             {this.state.isToggleOn
               ? 'ON'
@@ -76,3 +76,6 @@ class App extends Component {
         </div>
         <Test name={this.state.name}/>
       </div>
+    )
+  }
+}
