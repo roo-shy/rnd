@@ -25,7 +25,8 @@ class Test extends Component {
         <h1>Welcome</h1>
       </div>
     );
-
+  }
+}
 
 export default class App extends Component {
   constructor(props) {
@@ -35,7 +36,6 @@ export default class App extends Component {
     };
 
     // This binding is necessary to make `this` work in the callback could be removed if using ES6
-    
     this.handleClick = this.handleClick.bind(this);
   }
 
